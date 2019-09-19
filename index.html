@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Tic Tac Toe</title>
+   <link href="https://fonts.googleapis.com/css?family=Nunito:400,900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+   <div class="scoreWrapper">
+      <div class="scoreX">
+         <h2>Score for <strong>X</strong></h2>
+         <input type="text" value="" placeholder="Enter Player's Name">
+         <span class="boardScores">0</span>
+      </div>
+
+      <h1>Tic Tac Toe</h1>
+
+      <div class="scoreO">
+         <h2>Score for <strong>O</strong></h2>
+         <input type="text" value="" placeholder="Enter Player's Name">
+         <span class="boardScores">0</span>
+      </div>
+   </div>
+
+   <div class="gameWrapper">
+
+      <div class="messageWrapper">
+         <div onclick="deleteMessage()"></div>
+      </div>
+
+      <div class="boardWrapper">
+         <div class="boardCell" data-spot="0" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="1" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="2" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="3" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="4" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="5" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="6" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="7" onclick="fillCell(this)"></div>
+         <div class="boardCell" data-spot="8" onclick="fillCell(this)"></div>
+      </div>
+
+      <div class="nextMove">
+         Next to Move: <span></span>
+      </div>
+
+      <div class="startGame">
+         <button class="startGameBtn">Another Match</button>
+         <a href="#" onclick="resetScores()">Clear Game</a>
+      </div>
+
+   </div>
+
+   <script src="js/main-min.js" charset="utf-8"></script>
+</body>
+</html>

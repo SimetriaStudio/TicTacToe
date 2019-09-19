@@ -1,0 +1,219 @@
+$orange: #ffa100
+$blue: #1047b3
+$green: #00aa5d
+$gray: #ccc
+$black: #000
+$white: #fff
+
+$brd: 10px
+
+*
+   box-sizing: border-box
+   -webkit-appearance: none
+
+body
+   background: linear-gradient(45deg, $green, $blue)
+   min-height: 100vh
+   font-size: 16px
+   font-family: 'Nunito', sans-serif
+   font-weight: 400
+   justify-content: center
+   margin: 0
+   padding: 0
+
+.scoreWrapper
+   width: 100%
+   display: flex
+   justify-content: space-between
+   align-items: center
+   .scoreX,
+   .scoreO
+      background: $white
+      width: calc(20% - 20px)
+      min-width: 195px
+      text-align: center
+      padding: 10px 15px
+      margin: 25px
+      border-radius: $brd
+      h2
+         font-weight: lighter
+         margin: 0
+         padding: 0
+      input
+         width: 100%
+         font-size: 1rem
+         text-align: center
+         display: block
+         border: none
+         margin: 5px 0
+         padding: 8px 0
+         border: 1px solid $gray
+         border-radius: 0
+         outline: none
+         -webkit-appearance: none
+      span
+         font-size: 3em
+   .scoreX
+      span,
+      strong
+         color: $blue
+   .scoreO
+      span,
+      strong
+         color: $orange
+   h1
+      color: $white
+      font-size: 3rem
+      text-transform: uppercase
+      margin: 0
+
+.gameWrapper
+   display: flex
+   flex-direction: column
+   align-items: center
+   justify-content: center
+   .messageWrapper
+      width: 600px
+      .message
+         background: $white
+         text-align: center
+         margin: 0 5px
+         padding: 10px
+         border-radius: $brd
+         position: relative
+         display: flex
+         align-items: center
+         justify-content: center
+         &.success
+            background: $green
+            color: $white
+         &.warning
+            background: $orange
+            color: $black
+         &::after
+            content: 'X'
+            background: $black
+            width: 26px
+            height: 26px
+            color: $white
+            display: flex
+            align-items: center
+            justify-content: center
+            position: absolute
+            right: -13px
+            top: -13px
+            border-radius: 50%
+            padding: 1px 0 0 0
+            cursor: pointer
+
+   .boardWrapper
+      width: 600px
+      height: 600px
+      display: flex
+      flex-wrap: wrap
+      margin: 20px 0 0 0
+      .boardCell
+         background: $white
+         width: calc(200px - 10px)
+         height: calc(200px - 10px)
+         color: $white
+         font-size: 6em
+         font-weight: 900
+         cursor: pointer
+         display: flex
+         align-items: center
+         justify-content: center
+         border-radius: $brd
+         margin: 5px
+         transform: scale(1)
+         transition: all 350ms ease-in-out
+         &:hover
+            background: $white
+            box-shadow: 0 0 14px rgba(0, 0, 0, 0.65)
+            transform: scale(1.02)
+
+   .nextMove
+      background: $white
+      width: 590px
+      color: $gray
+      font-size: 1.3em
+      text-align: center
+      padding: 10px
+      margin: 10px 0
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: $brd
+      span
+         color: $black
+         font-size: 2em
+         font-weight: bold
+         margin: 0 0 0 10px
+
+   .startGame
+      width: 590px
+      margin: 10px 0 20px 0
+      display: flex
+      align-items: center
+      justify-content: center
+      .startGameBtn
+         background: $blue
+         color: $white
+         font-size: 1rem
+         font-weight: bold
+         text-transform: uppercase
+         padding: 8px 15px
+         margin: 0 20px 0 0
+         border: none
+         border-radius: $brd
+         outline: none
+         cursor: pointer
+         transition: all 350ms ease-in-out
+         &:hover
+            background: $white
+            color: $blue
+      a
+         color: $white
+         transition: all 350ms ease-in-out
+         &:hover
+            color: $blue
+
+@media (max-width: 812px)
+   body
+      transform: scale(0.9)
+   .scoreWrapper
+      flex-wrap: wrap
+      .scoreX,
+      .scoreO
+         width: calc(50% - 20px)
+         min-width: 160px
+         padding: 10px
+         margin: 0 10px 20px
+         input
+            width: 100%
+      .scoreX
+         order: 2
+      .scoreO
+         order: 3
+      h1
+         width: 100%
+         text-align: center
+         order: 1
+         margin: 10px 0 0 0
+
+   .gameWrapper
+      .messageWrapper
+         width: 100%
+         .message
+            margin: 0 5px 15px
+      .boardWrapper
+         width: 360px
+         height: 360px
+         margin: 0
+         .boardCell
+            width: calc(120px - 10px)
+            height: calc(120px - 10px)
+      .nextMove,
+      .startGame
+         width: calc(100% - 20px)
+         padding: 0
